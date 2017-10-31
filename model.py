@@ -35,3 +35,27 @@ class ToDo:
         else:
             infromation_todo = '[X]' + self.id + ': ' + self.name + '\n' + self.description
             return infromation_todo
+
+
+class ToDoList:
+
+    def __init__(self):
+        """
+        Argument: instance of ToDoList class
+        Return: none
+        """
+        self.todo_list = []
+
+    def add_task_to_list(self, task):
+        """
+        Argument: instance of ToDoList class, instance of ToDo class
+        Return: none
+        """
+        self.todo_list.append(task)
+
+    def remove_task_from_list(self, task_id):
+        """
+        Argument: instance of ToDoList, str
+        Return: none
+        """
+        self.todo_list.remove(task_id)
