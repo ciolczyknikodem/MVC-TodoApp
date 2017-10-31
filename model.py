@@ -22,6 +22,24 @@ class ToDo:
         """
         self.is_done = True
 
+    def change_name_of_task(self, new_task_name):
+        """
+        Argument: instance of ToDo class, str --> user input
+        Return: none
+
+        Method change name of instance task
+        """
+        self.name = new_task_name
+
+    def change_description_of_task(self, new_task_description):
+        """
+        Argument: instance of ToDo class, str --> user input
+        Return: none
+
+        Method change description of instance task
+        """
+        self.description = new_task_description
+
     def __str__(self):
         """
         Argument: instance of ToDo class
