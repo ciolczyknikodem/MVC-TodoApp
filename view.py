@@ -1,4 +1,11 @@
 def display_menu_options():
+    """
+        Argument: none
+        Return: none
+
+        Function display main menu options
+    """
+
     welcome_infromation = 'Welcome in ToDo aplication!\n'
     exit_program = '0. Exit'
     control_information = '\n\nMy program using key getch in menu, you dont need to confirm your chose by enter. Enjoy!'
