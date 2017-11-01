@@ -25,6 +25,9 @@ def main():
             pass
 
         elif type_of_operation == '5':
+            pass
+
+        elif type_of_operation == '6':
             controller.ask_for_display_tasks(todo_list)
 
         elif type_of_operation == '0':
