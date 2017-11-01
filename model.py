@@ -47,11 +47,11 @@ class ToDo:
         """
 
         if self.is_done:
-            infromation_todo = '[X] ' + self.id + ' : ' + self.name + '\n' + self.description
+            infromation_todo = '[X]. ' + self.id + ' : ' + self.name + '\n' + 'Description: ' + self.description
             return infromation_todo
 
         else:
-            infromation_todo = '[ ]' + self.id + ': ' + self.name + '\n' + self.description
+            infromation_todo = '[ ]. ' + self.id + ' : ' + self.name + '\n' + 'Description: ' + self.description
             return infromation_todo
 
 
