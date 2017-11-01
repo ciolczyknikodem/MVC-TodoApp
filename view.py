@@ -8,7 +8,7 @@ def display_menu_options():
 
         Function display main menu options
     """
-
+    os.system('clear')
     welcome_infromation = 'Welcome in ToDo aplication!\n'
     exit_program = '0. Exit'
     control_information = '\n\nMy program using key getch in menu, you dont need to confirm your chose by enter. Enjoy!'
@@ -28,7 +28,10 @@ def display_menu_options():
     print(exit_program, control_information)
 
 
-def display_add_task(name, description):
+def display_add_task_name():
     os.system('clear')
-    print('Adding task to your Todo List:')
-    
+    print('Adding task to your Todo List:\n\nEnter name of your task: ')
+
+
+def display_add_task_description():
+        print('\nName of task has been added!\nEnter description of task: ')

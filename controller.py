@@ -1,24 +1,17 @@
 import view
 import model
-import os
-import key_getch
-import sys
 
 
-def main():
-    os.system('clear')
+def add_task_to_list():
+    name_of_new_task = ''
+    description_of_task = ''
 
-    while True:
-        view.display_menu_options()
+    while len(name_of_new_task) > 0 and len(name_of_new_task) < 20:
+        view.display_add_task_name()
+        name_of_new_task = input()
 
-        type_of_operation = key_getch.getch()
+    while len(description_of_task) > 0 and len(name_of_new_task) < 150:
+        view.display_add_task_description()
+        description_of_task = input()
 
-        if type_of_operation == '1':
-            view.display_add_task(name, description)
-
-        elif type_of_operation == '0':
-            sys.exit()
-
-
-if __name__ == '__main__':
-    main()
+    task = ToDo(_id, name_of_new_task, description_of_task)
