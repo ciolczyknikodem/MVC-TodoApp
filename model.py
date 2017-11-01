@@ -47,11 +47,11 @@ class ToDo:
         """
 
         if self.is_done:
-            infromation_todo = '[X]' + self.id + ': ' + self.name + '\n' + self.description
+            infromation_todo = '[X] ' + self.id + ' : ' + self.name + '\n' + self.description
             return infromation_todo
 
         else:
-            infromation_todo = '[X]' + self.id + ': ' + self.name + '\n' + self.description
+            infromation_todo = '[ ]' + self.id + ': ' + self.name + '\n' + self.description
             return infromation_todo
 
 
@@ -77,3 +77,11 @@ class ToDoList:
         Return: none
         """
         self.todo_list.remove(task_id)
+
+    def __str__(self):
+        list_string = ''
+
+        for element in self.todo_list:
+            list_string += element.__str__() + '\n'
+
+        return list_string

@@ -35,3 +35,7 @@ def display_add_task_name():
 
 def display_add_task_description():
         print('\nName of task has been added!\nEnter description of task: ')
+
+
+def display_all_tasks(todo_list):
+    print(todo_list)
