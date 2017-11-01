@@ -1,6 +1,6 @@
 import view
 from model import ToDo
-from generate_id import generate_id_for_task, check_if_id_already_exist
+from generate_id import generate_id_for_task
 
 
 def add_task_to_list(todo_list):
@@ -8,10 +8,9 @@ def add_task_to_list(todo_list):
     description_of_task = ''
     unique_id = True
 
-    # while unique_id is True:
-    new_id = generate_id_for_task()
-        # unique_id = check_if_id_already_exist(new_id, todo_list)
-    # print(new_id)
+    while unique_id is True:
+        new_id = generate_id_for_task()
+        unique_id = todo_list.check_if_id_already_exist(new_id)
 
     while not len(name_of_new_task) > 0 and len(name_of_new_task) < 20:
         view.display_add_task_name()
@@ -27,3 +26,4 @@ def add_task_to_list(todo_list):
 
 def ask_for_display_tasks(todo_list):
     view.display_all_tasks(todo_list)
+    exit_to_menu = input()
