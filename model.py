@@ -78,6 +78,20 @@ class ToDoList:
         """
         self.todo_list.remove(task_id)
 
+    def check_if_id_already_exist(self, new_id):
+        """
+        Arguments: instance of ToDoList, str
+        Return: Bool
+
+        Method check if new_id already exist in list
+        """
+        for _id in self.todo_list:
+            if _id.id == new_id:
+                return True
+
+            else:
+                return False
+
     def __str__(self):
         list_string = ''
 
