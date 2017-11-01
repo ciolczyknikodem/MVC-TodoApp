@@ -32,5 +32,5 @@ def modify_task(todo_list):
 
 
 def ask_for_display_tasks(todo_list):
-    view.display_all_tasks(todo_list)
+    view.display_all_tasks_details(todo_list)
     exit_to_menu = input()

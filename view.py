@@ -19,7 +19,7 @@ def display_menu_options():
     control_information = '\n\nMy program using key getch in menu, you dont need to confirm your chose by enter. Enjoy!'
 
     options = ['Add task to list todo', 'Modify name or description of task', 'Remove task from todo list',
-               'Mark task to done/undone', 'Display tasks', 'Display tasks with details']
+               'Mark task to done/undone', 'Display tasks', 'Display specific todo task\'s details']
 
     print(welcome_infromation)
     index = 0
@@ -42,7 +42,11 @@ def display_add_task_description():
         print('\nName of task has been added!\nEnter description of task: ')
 
 
-def display_all_tasks(todo_list):
+def display_tasks_name():
+    pass
+
+
+def display_all_tasks_details(todo_list):
     clear_screen()
     print(todo_list)
     print('\nEnter to back to main menu:')
