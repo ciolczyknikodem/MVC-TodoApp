@@ -89,8 +89,7 @@ class ToDoList:
             if _id.id == new_id:
                 return True
 
-            else:
-                return False
+            return False
 
     def __str__(self):
         list_string = ''
