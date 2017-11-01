@@ -14,7 +14,7 @@ def main():
         type_of_operation = key_getch.getch()
 
         if type_of_operation == '1':
-            print('Working')
+            view.display_add_task(name, description)
 
         elif type_of_operation == '0':
             sys.exit()

@@ -1,3 +1,6 @@
+import os
+
+
 def display_menu_options():
     """
         Argument: none
@@ -25,5 +28,7 @@ def display_menu_options():
     print(exit_program, control_information)
 
 
-def display_add_task():
-    print('')
+def display_add_task(name, description):
+    os.system('clear')
+    print('Adding task to your Todo List:')
+    
