@@ -111,13 +111,13 @@ class ToDoList:
         except IndexError:
             return is_error
 
-    def change_description(self, index, new_task_description):
-        if self.todo_list[index]:
-            self.todo_list[index].change_description_of_task(new_task_description)
-
     def get_task(self, index):
+        """
+        Argument: instance of ToDoList, int
+        Return: instance of ToDo
+        """
         return self.todo_list[index]
-    
+
     def __str__(self):
         list_string = ''
         index = 1

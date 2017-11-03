@@ -1,5 +1,4 @@
 import os
-import time
 
 
 def clear_screen():
@@ -43,7 +42,6 @@ def display_add_task_description():
 
 
 def display_modify_todo(type_of_change=None):
-    clear_screen()
     change_description = 'description'
     change_description_information = 'Now you can enter new description to this task, it must me be less than 150chars: '
     change_name = 'name'
@@ -51,9 +49,11 @@ def display_modify_todo(type_of_change=None):
     change_information = 'Enter "name" or "description" to change it: '
 
     if type_of_change == change_description:
+        clear_screen()
         print(change_description_information)
 
     elif type_of_change == change_name:
+        clear_screen()
         print(change_name_information)
 
     else:

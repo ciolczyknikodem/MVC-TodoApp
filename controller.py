@@ -25,6 +25,7 @@ def add_name():
     name_of_new_task = ''
     min_len_of_task = 0
     max_len_of_name = 20
+
     while not len(name_of_new_task) > min_len_of_task and len(name_of_new_task) < max_len_of_name:
         view.display_add_task_name()
         name_of_new_task = input()
@@ -36,6 +37,7 @@ def add_description():
     description_of_task = ''
     min_len_of_task = 0
     max_len_of_description = 150
+
     while not len(description_of_task) > min_len_of_task and len(description_of_task) < max_len_of_description:
         view.display_add_task_description()
         description_of_task = input()
@@ -54,15 +56,20 @@ def modify_task(todo_list):
 
     if type_of_change == change_description:
         view.display_modify_todo(change_description)
+        new_description = input()
+        task_to_change.change_description_of_task(new_description)
 
     elif type_of_change == change_name:
         view.display_modify_todo(change_name)
+        new_name = input()
+        task_to_change.change_name_of_task(new_name)
 
 
 def get_task_index(todo_list, operation='change'):
     view.display_get_index_of_task(todo_list, operation)
     change_input_index_by_1 = 1
     correct_input = True
+
     while correct_input is True:
         index_of_task = input()
         if index_of_task.isdigit():
@@ -76,6 +83,7 @@ def get_task_index(todo_list, operation='change'):
 def mark_task(todo_list):
     operation = 'mark'
     index_of_task = get_task_index(todo_list, operation)
+
     is_error = todo_list.mark_task(index_of_task)
     if is_error:
         view.display_error()
@@ -85,14 +93,11 @@ def mark_task(todo_list):
 def remove_task_from_list(todo_list):
     operation = 'remove'
     index_of_task = get_task_index(todo_list, operation)
+
     is_error = todo_list.remove_task_from_list(index_of_task)
     if is_error:
         view.display_error()
         back_to_menu()
-
-
-def change_description_of_task(todo_list):
-    pass
 
 
 def ask_for_display_tasks(type_of_operation, todo_list):
