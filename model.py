@@ -47,11 +47,11 @@ class ToDo:
         """
 
         if self.is_done:
-            infromation_todo = '[X]. ' + 'ID: ' + self.id + ' : ' + 'Task name: ' + self.name + '\n' + 'Description: ' + self.description
+            infromation_todo = '[X]. ' + 'ID: ' + self.id + '  ' + 'Task name: ' + self.name + '\n' + 'Description: ' + self.description
             return infromation_todo
 
         else:
-            infromation_todo = '[ ]. ' + 'ID: ' + self.id + ' : ' + 'Task name: ' + self.name + '\n' + 'Description: ' + self.description
+            infromation_todo = '[ ]. ' + 'ID: ' + self.id + '  ' + 'Task name: ' + self.name + '\n' + 'Description: ' + self.description
             return infromation_todo
 
 
@@ -76,7 +76,11 @@ class ToDoList:
         Argument: instance of ToDoList, int
         Return: none
         """
-        del self.todo_list[task_id]
+        is_error = True
+        try:
+            del self.todo_list[task_id]
+        except IndexError:
+            return is_error
 
     def check_if_id_already_exist(self, new_id):
         """
@@ -94,14 +98,22 @@ class ToDoList:
     def mark_task(self, index):
         """
         Argument: instance of ToDoList, int
-        Return: none
+        Return: bool
 
         Method mark task(instance of ToDo), chang bool of is_done attribute.
         """
-        if self.todo_list[index].is_done is False:
-            self.todo_list[index].is_done = True
-        else:
-            self.todo_list[index].is_done = False
+        is_error = True
+        try:
+            if self.todo_list[index].is_done is False:
+                self.todo_list[index].is_done = True
+            else:
+                self.todo_list[index].is_done = False
+        except IndexError:
+            return is_error
+
+    def change_description(self, index, new_task_description):
+        if self.todo_list[index]:
+            self.todo_list[index].change_description_of_task(new_task_description)
 
     def __str__(self):
         list_string = ''
