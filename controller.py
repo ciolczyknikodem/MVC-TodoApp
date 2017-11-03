@@ -3,6 +3,10 @@ from model import ToDo
 from generate_id import generate_id_for_task
 
 
+def exit_to_menu():
+    input()
+
+
 def add_task_to_list(todo_list):
     name_of_new_task = ''
     description_of_task = ''
@@ -31,6 +35,27 @@ def modify_task(todo_list):
     pass
 
 
-def ask_for_display_tasks(todo_list):
+def mark_task(todo_list):
     view.display_all_tasks_details(todo_list)
-    exit_to_menu = input()
+    index_of_task = input()
+    change_input_index_by_1 = 1
+    correct_input = False
+
+    while correct_input is False:
+        if index_of_task.isdigit():
+            index_of_task = int(index_of_task) + change_input_index_by_1
+            todo_list.mark_task(index_of_task)
+            correct_input = True
+
+
+def ask_for_display_tasks(type_of_operation, todo_list):
+    display_tasks_name = '5'
+    display_all_tasks_details = '6'
+
+    if type_of_operation == display_tasks_name:
+        view.display_tasks_name(todo_list)
+        exit_to_menu()
+
+    elif type_of_operation == display_all_tasks_details:
+        view.display_all_tasks_details(todo_list)
+        exit_to_menu()

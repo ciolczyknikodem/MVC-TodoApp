@@ -47,11 +47,11 @@ class ToDo:
         """
 
         if self.is_done:
-            infromation_todo = '[X]. ' + self.id + ' : ' + self.name + '\n' + 'Description: ' + self.description
+            infromation_todo = '[X]. ' + 'ID: ' + self.id + ' : ' + 'Task name: ' + self.name + '\n' + 'Description: ' + self.description
             return infromation_todo
 
         else:
-            infromation_todo = '[ ]. ' + self.id + ' : ' + self.name + '\n' + 'Description: ' + self.description
+            infromation_todo = '[ ]. ' + 'ID: ' + self.id + ' : ' + 'Task name: ' + self.name + '\n' + 'Description: ' + self.description
             return infromation_todo
 
 
@@ -91,10 +91,17 @@ class ToDoList:
 
             return False
 
+    def mark_task(self, index):
+        if self.todo_list[index].is_done is False:
+            self.todo_list[index].is_done = True
+
     def __str__(self):
         list_string = ''
+        index = 1
 
         for element in self.todo_list:
-            list_string += element.__str__() + '\n'
+            index = str(index)
+            list_string += index + '. ' + element.__str__() + '\n'
+            index = int(index)
 
         return list_string

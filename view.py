@@ -42,11 +42,17 @@ def display_add_task_description():
         print('\nName of task has been added!\nEnter description of task: ')
 
 
-def display_tasks_name():
+def display_tasks_name(todo_list):
     pass
 
 
 def display_all_tasks_details(todo_list):
     clear_screen()
-    print(todo_list)
-    print('\nEnter to back to main menu:')
+    back_information = '\nEnter to back to main menu:'
+    print(todo_list, back_information)
+
+
+def display_mark_items(todo_list):
+    clear_screen()
+    task_to_mark = '\nEnter number which task you want to mark: '
+    print(todo_list, task_to_mark)
