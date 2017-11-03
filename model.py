@@ -123,9 +123,17 @@ class ToDoList:
             return is_error
 
     def get_name_id_of_tasks(self):
+        """
+        Argument: instance of ToDoList
+        Return: instance of ToDoList
+        """
         return self.todo_list
 
     def __str__(self):
+        """
+        Argument: instance of ToDoList class
+        Return: str
+        """
         list_string = ''
         index = 1
         change_index_by_1 = 1

@@ -2,6 +2,12 @@ import os
 
 
 def clear_screen():
+    """
+        Argument: none
+        Return: none
+
+    Function clear screen in other view functions.
+    """
     os.system('clear')
 
 
@@ -34,6 +40,9 @@ def display_menu_options():
 
 def display_add_task_name():
     """
+        Argument: none
+        Return: none
+
     Display information about adding name.
     """
     clear_screen()
@@ -43,6 +52,9 @@ def display_add_task_name():
 
 def display_add_task_description():
     """
+        Argument: none
+        Return: none
+
     Display information about adding description.
     """
     infromation_add_description = '\nName of task has been added!\nEnter description of task: '
@@ -111,6 +123,6 @@ def display_error():
     Return: none
 
     Method display information about error.
-    """"
+    """
     error_information = 'There is no task with index you entered!'
     print(error_information)

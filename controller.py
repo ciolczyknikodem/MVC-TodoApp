@@ -4,10 +4,22 @@ from generate_id import generate_id_for_task
 
 
 def back_to_menu():
+    """
+        Argument: none
+        Return: none
+
+    Function contain input function it use to back to menu.
+    """
     input()
 
 
 def add_task_to_list(todo_list):
+    """
+        Argument: instance of class ToDoList
+        Return: none
+
+    Function contain generate id module and add name and descritpion tasks, make from it instance of class ToDo.
+    """
     unique_id = True
 
     while unique_id is True:
@@ -22,6 +34,10 @@ def add_task_to_list(todo_list):
 
 
 def add_name():
+    """
+        Argument: none
+        Return: none
+    """
     name_of_new_task = ''
     min_len_of_task = 0
     max_len_of_name = 20
@@ -34,6 +50,10 @@ def add_name():
 
 
 def add_description():
+    """
+        Argument: none
+        Return: none
+    """
     description_of_task = ''
     min_len_of_task = 0
     max_len_of_description = 150
@@ -46,6 +66,12 @@ def add_description():
 
 
 def modify_task(todo_list):
+    """
+        Argument: instance of class ToDoList
+        Return: none
+
+    Function contain view and class elements of program to change tasks name or description.
+    """
     task_index = get_task_index(todo_list)
 
     is_error = task_to_change = todo_list.get_task(task_index)
@@ -70,6 +96,12 @@ def modify_task(todo_list):
 
 
 def get_task_index(todo_list, operation='change'):
+    """
+        Argument: instance of class ToDoList, str
+        Return: int
+
+    Function takes user input and format it to correct type, also check if user input is digit.
+    """
     view.display_get_index_of_task(todo_list, operation)
     change_input_index_by_1 = 1
     correct_input = True
@@ -85,6 +117,12 @@ def get_task_index(todo_list, operation='change'):
 
 
 def mark_task(todo_list):
+    """
+        Argument: instance of ToDoList class
+        Return: none
+
+    Function mark instance of ToDo class.
+    """
     operation = 'mark'
     index_of_task = get_task_index(todo_list, operation)
 
@@ -95,6 +133,12 @@ def mark_task(todo_list):
 
 
 def remove_task_from_list(todo_list):
+    """
+        Argument: instance of ToDoList class
+        Return: none
+
+    Function remove instance of ToDo class from list.
+    """
     operation = 'remove'
     index_of_task = get_task_index(todo_list, operation)
 
@@ -105,6 +149,12 @@ def remove_task_from_list(todo_list):
 
 
 def ask_for_display_tasks(type_of_operation, todo_list):
+    """
+        Argument: str, instance of ToDoList class
+        Return: none
+
+    Function contain view functions(all tasks with details or not) and decide what should be display on user screen.
+    """
     display_tasks_name = '5'
     display_all_tasks_details = '6'
 
