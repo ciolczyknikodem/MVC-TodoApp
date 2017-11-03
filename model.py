@@ -92,6 +92,12 @@ class ToDoList:
             return False
 
     def mark_task(self, index):
+        """
+        Argument: instance of ToDoList, int
+        Return: none
+
+        Method mark task(instance of ToDo), chang bool of is_done attribute.
+        """
         if self.todo_list[index].is_done is False:
             self.todo_list[index].is_done = True
 
