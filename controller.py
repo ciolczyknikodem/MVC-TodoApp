@@ -3,7 +3,7 @@ from model import ToDo
 from generate_id import generate_id_for_task
 
 
-def exit_to_menu():
+def back_to_menu():
     input()
 
 
@@ -35,38 +35,39 @@ def modify_task(todo_list):
     pass
 
 
+def get_task_index():
+    change_input_index_by_1 = 1
+    correct_input = True
+    while correct_input is True:
+        index_of_task = input()
+        if index_of_task.isdigit():
+            index_of_task = int(index_of_task)
+            index_of_task -= change_input_index_by_1
+            correct_input = False
+
+    return index_of_task
+
+
 def mark_task(todo_list):
     view.display_all_tasks_details(todo_list)
-    correct_input = False
-    change_input_index_by_1 = 1
-
-    while correct_input is False:
-        try:
-            index_of_task = input()
-            if index_of_task.isdigit():
-                index_of_task = int(index_of_task)
-                index_of_task -= change_input_index_by_1
-                todo_list.mark_task(index_of_task)
-                correct_input = True
-        except IndexError:
-            continue
+    index_of_task = get_task_index()
+    is_error = todo_list.mark_task(index_of_task)
+    if is_error:
+        view.display_error()
+        back_to_menu()
 
 
 def remove_task_from_list(todo_list):
     view.display_all_tasks_details(todo_list)
-    correct_input = False
-    change_input_index_by_1 = 1
+    index_of_task = get_task_index()
+    is_error = todo_list.remove_task_from_list(index_of_task)
+    if is_error:
+        view.display_error()
+        back_to_menu()
 
-    while correct_input is False:
-        try:
-            index_of_task = input()
-            if index_of_task.isdigit():
-                index_of_task = int(index_of_task)
-                index_of_task -= change_input_index_by_1
-                todo_list.remove_task_from_list(index_of_task)
-                correct_input = True
-        except IndexError:
-            continue
+
+def change_description_of_task(todo_list):
+    pass
 
 
 def ask_for_display_tasks(type_of_operation, todo_list):
@@ -75,8 +76,8 @@ def ask_for_display_tasks(type_of_operation, todo_list):
 
     if type_of_operation == display_tasks_name:
         view.display_tasks_name(todo_list)
-        exit_to_menu()
+        back_to_menu()
 
     elif type_of_operation == display_all_tasks_details:
         view.display_all_tasks_details(todo_list)
-        exit_to_menu()
+        back_to_menu()
