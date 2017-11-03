@@ -23,7 +23,7 @@ def main():
             controller.add_task_to_list(todo_list)
 
         elif type_of_operation == modify_task:
-            pass
+            controller.modify_task(todo_list)
 
         elif type_of_operation == remove_task_from_list:
             controller.remove_task_from_list(todo_list)

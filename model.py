@@ -115,6 +115,9 @@ class ToDoList:
         if self.todo_list[index]:
             self.todo_list[index].change_description_of_task(new_task_description)
 
+    def get_task(self, index):
+        return self.todo_list[index]
+    
     def __str__(self):
         list_string = ''
         index = 1
