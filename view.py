@@ -43,8 +43,7 @@ def display_add_task_description():
 
 
 def display_tasks_name(todo_list):
-    for i in todo_list:
-        print(i)
+    pass
 
 
 def display_all_tasks_details(todo_list):
@@ -57,3 +56,8 @@ def display_mark_items(todo_list):
     clear_screen()
     task_to_mark = '\nEnter number which task you want to mark: '
     print(todo_list, task_to_mark)
+
+
+def display_error():
+    error_information = 'There is no task with index you entered!'
+    print(error_information)
