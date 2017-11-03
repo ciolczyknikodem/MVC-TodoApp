@@ -116,7 +116,11 @@ class ToDoList:
         Argument: instance of ToDoList, int
         Return: instance of ToDo
         """
-        return self.todo_list[index]
+        is_error = True
+        try:
+            return self.todo_list[index]
+        except IndexError:
+            return is_error
 
     def __str__(self):
         list_string = ''

@@ -47,7 +47,11 @@ def add_description():
 
 def modify_task(todo_list):
     task_index = get_task_index(todo_list)
-    task_to_change = todo_list.get_task(task_index)
+
+    is_error = task_to_change = todo_list.get_task(task_index)
+    if is_error:
+        view.display_error()
+        back_to_menu()
 
     change_description = 'description'
     change_name = 'name'
