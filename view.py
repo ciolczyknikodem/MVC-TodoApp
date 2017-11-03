@@ -42,6 +42,24 @@ def display_add_task_description():
         print('\nName of task has been added!\nEnter description of task: ')
 
 
+def display_modify_todo(type_of_change=None):
+    clear_screen()
+    change_description = 'description'
+    change_description_information = 'Now you can enter new description to this task, it must me be less than 150chars: '
+    change_name = 'name'
+    change_name_information = 'Now you can enter new name for this task, it must be less than 20 chars: '
+    change_information = 'Enter "name" or "description" to change it: '
+
+    if type_of_change == change_description:
+        print(change_description_information)
+
+    elif type_of_change == change_name:
+        print(change_name_information)
+
+    else:
+        print(change_information)
+
+
 def display_tasks_name(todo_list):
     pass
 
@@ -52,9 +70,9 @@ def display_all_tasks_details(todo_list):
     print(todo_list, back_information)
 
 
-def display_mark_items(todo_list):
+def display_get_index_of_task(todo_list, operation):
     clear_screen()
-    task_to_mark = '\nEnter number which task you want to mark: '
+    task_to_mark = '\nEnter number for task you want ' + operation + ': '
     print(todo_list, task_to_mark)
 
 
