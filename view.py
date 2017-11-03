@@ -43,7 +43,8 @@ def display_add_task_description():
 
 
 def display_tasks_name(todo_list):
-    pass
+    for i in todo_list:
+        print(i)
 
 
 def display_all_tasks_details(todo_list):

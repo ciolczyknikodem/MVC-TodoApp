@@ -73,10 +73,10 @@ class ToDoList:
 
     def remove_task_from_list(self, task_id):
         """
-        Argument: instance of ToDoList, str
+        Argument: instance of ToDoList, int
         Return: none
         """
-        self.todo_list.remove(task_id)
+        del self.todo_list[task_id]
 
     def check_if_id_already_exist(self, new_id):
         """
@@ -100,6 +100,8 @@ class ToDoList:
         """
         if self.todo_list[index].is_done is False:
             self.todo_list[index].is_done = True
+        else:
+            self.todo_list[index].is_done = False
 
     def __str__(self):
         list_string = ''

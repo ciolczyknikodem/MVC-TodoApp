@@ -52,6 +52,23 @@ def mark_task(todo_list):
             continue
 
 
+def remove_task_from_list(todo_list):
+    view.display_all_tasks_details(todo_list)
+    correct_input = False
+    change_input_index_by_1 = 1
+
+    while correct_input is False:
+        try:
+            index_of_task = input()
+            if index_of_task.isdigit():
+                index_of_task = int(index_of_task)
+                index_of_task -= change_input_index_by_1
+                todo_list.remove_task_from_list(index_of_task)
+                correct_input = True
+        except IndexError:
+            continue
+
+
 def ask_for_display_tasks(type_of_operation, todo_list):
     display_tasks_name = '5'
     display_all_tasks_details = '6'

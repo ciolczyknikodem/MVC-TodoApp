@@ -26,7 +26,7 @@ def main():
             pass
 
         elif type_of_operation == remove_task_from_list:
-            pass
+            controller.remove_task_from_list(todo_list)
 
         elif type_of_operation == mark_task:
             controller.mark_task(todo_list)
