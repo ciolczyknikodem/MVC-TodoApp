@@ -33,15 +33,29 @@ def display_menu_options():
 
 
 def display_add_task_name():
+    """
+    Display information about adding name.
+    """
     clear_screen()
-    print('Adding task to your Todo List:\n\nEnter name of your task: ')
+    infromation_add_name = 'Adding task to your Todo List:\n\nEnter name of your task: '
+    print(infromation_add_name)
 
 
 def display_add_task_description():
-        print('\nName of task has been added!\nEnter description of task: ')
+    """
+    Display information about adding description.
+    """
+    infromation_add_description = '\nName of task has been added!\nEnter description of task: '
+    print(infromation_add_description)
 
 
 def display_modify_todo(type_of_change=None):
+    """
+    Argument: str
+    Return: none
+
+    Method take as argument variable and display screens with information of modify task.
+    """
     change_description = 'description'
     change_description_information = 'Now you can enter new description to this task, it must me be less than 150chars: '
     change_name = 'name'
@@ -61,21 +75,42 @@ def display_modify_todo(type_of_change=None):
 
 
 def display_tasks_name(todo_list):
-    pass
+    """
+    Argument: instance of ToDoList
+    Return: none
+    """
+    number_of_task = 1
+    for task in todo_list.get_name_id_of_tasks():
+        print(str(number_of_task) + '. ', task.name, task.id)
+        number_of_task += 1
 
 
 def display_all_tasks_details(todo_list):
+    """
+    Argument: instance of ToDoList
+    Return: none
+    """
     clear_screen()
     back_information = '\nEnter to back to main menu:'
     print(todo_list, back_information)
 
 
 def display_get_index_of_task(todo_list, operation):
+    """
+    Argument: instance of ToDoList, str
+    Return: none
+    """
     clear_screen()
     task_to_mark = '\nEnter number for task you want ' + operation + ': '
     print(todo_list, task_to_mark)
 
 
 def display_error():
+    """
+    Argument: none
+    Return: none
+
+    Method display information about error.
+    """"
     error_information = 'There is no task with index you entered!'
     print(error_information)
