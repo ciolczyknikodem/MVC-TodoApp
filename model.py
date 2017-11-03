@@ -104,10 +104,12 @@ class ToDoList:
     def __str__(self):
         list_string = ''
         index = 1
+        change_index_by_1 = 1
 
         for element in self.todo_list:
             index = str(index)
             list_string += index + '. ' + element.__str__() + '\n'
             index = int(index)
+            index += change_index_by_1
 
         return list_string
