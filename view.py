@@ -69,7 +69,7 @@ def display_modify_todo(type_of_change=None):
     Method take as argument variable and display screens with information of modify task.
     """
     change_description = 'description'
-    change_description_information = 'Now you can enter new description to this task, it must me be less than 150chars: '
+    change_description_information = 'Now you can enter new description to this task, it must me be less than 150 chars: '
     change_name = 'name'
     change_name_information = 'Now you can enter new name for this task, it must be less than 20 chars: '
     change_information = 'Enter "name" or "description" to change it: '

@@ -74,25 +74,28 @@ def modify_task(todo_list):
     """
     task_index = get_task_index(todo_list)
 
-    is_error = task_to_change = todo_list.get_task(task_index)
-    if is_error:
+    is_error = todo_list.get_task(task_index)
+    if is_error is True:
         view.display_error()
         back_to_menu()
 
-    change_description = 'description'
-    change_name = 'name'
-    view.display_modify_todo()
-    type_of_change = input()
+    else:
+        task_to_change = is_error  # Rewrite variable to be more cleancode.
 
-    if type_of_change == change_description:
-        view.display_modify_todo(change_description)
-        new_description = input()
-        task_to_change.change_description_of_task(new_description)
+        change_description = 'description'
+        change_name = 'name'
+        view.display_modify_todo()
+        type_of_change = input()
 
-    elif type_of_change == change_name:
-        view.display_modify_todo(change_name)
-        new_name = input()
-        task_to_change.change_name_of_task(new_name)
+        if type_of_change == change_description:
+            view.display_modify_todo(change_description)
+            new_description = input()
+            task_to_change.change_description_of_task(new_description)
+
+        elif type_of_change == change_name:
+            view.display_modify_todo(change_name)
+            new_name = input()
+            task_to_change.change_name_of_task(new_name)
 
 
 def get_task_index(todo_list, operation='change'):
@@ -103,14 +106,14 @@ def get_task_index(todo_list, operation='change'):
     Function takes user input and format it to correct type, also check if user input is digit.
     """
     view.display_get_index_of_task(todo_list, operation)
-    change_input_index_by_1 = 1
+    reduce_input_index_by_1 = 1
     correct_input = True
 
     while correct_input is True:
         index_of_task = input()
         if index_of_task.isdigit():
             index_of_task = int(index_of_task)
-            index_of_task -= change_input_index_by_1
+            index_of_task -= reduce_input_index_by_1
             correct_input = False
 
     return index_of_task
